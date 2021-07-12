@@ -13,7 +13,10 @@ namespace internship.pages
         string connectionString = @"Server=localhost;Database=training;Uid=root;Pwd=Mysql@123;";
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if ((bool)Session["loggedIn"] == true)
+            {
+                Response.Redirect("~/accounts/login.aspx");
+            }
         }
         protected void submit(object sender, EventArgs e)
         {

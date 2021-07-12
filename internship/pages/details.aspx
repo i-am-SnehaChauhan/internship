@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Trainee Details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="details.aspx.cs" Inherits="internship.pages.details" %>
+﻿<%@ Page Title="Trainee Details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="details.aspx.cs" Inherits="internship.pages.details" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <section id="main-content">
         <section id="wrapper">

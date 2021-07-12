@@ -11,7 +11,10 @@ namespace internship.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if ((bool)Session["loggedIn"] == true)
+            {
+                Response.Redirect("~/accounts/login.aspx");
+            }
         }
     }
 }
