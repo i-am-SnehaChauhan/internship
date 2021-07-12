@@ -13,18 +13,15 @@ namespace internship.pages
         string connectionString = @"Server=localhost;Database=training;Uid=root;Pwd=Mysql@123;";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((bool)Session["loggedIn"] == true)
-            {
-                Response.Redirect("~/accounts/login.aspx");
-            }
+            
         }
         protected void submit(object sender, EventArgs e)
         {
                     MySqlConnection sqlCon = new MySqlConnection(connectionString);
                     sqlCon.Open();
-                    MySqlCommand sqlCmd = new MySqlCommand("", sqlCon);
+                    MySqlCommand sqlCmd = new MySqlCommand("feedback", sqlCon);
                     sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("_sno",  serialnumber.Text);
+                    sqlCmd.Parameters.AddWithValue("_traineesno",  serialnumber.Text);
                     sqlCmd.Parameters.AddWithValue("_feedback", feed.Text);
                     sqlCmd.ExecuteNonQuery();
         }

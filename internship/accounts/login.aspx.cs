@@ -20,13 +20,13 @@ namespace internship.accounts
         }
         private bool ValidateUser(string userName, string passWord)
         {
-            SqlConnection conn;
-            SqlCommand cmd;
+            MySqlConnection conn;
+            MySqlCommand cmd;
             string lookupPassword = null;
 
             // Check for invalid userName.
             // userName must not be null and must be between 1 and 15 characters.
-            if ((null == userName) || (0 == userName.Length) || (userName.Length > 15))
+            if ((null == userName) || (0 == userName.Length) || (userName.Length > 60))
             {
                 System.Diagnostics.Trace.WriteLine("[ValidateUser] Input validation of userName failed.");
                 return false;
@@ -44,12 +44,13 @@ namespace internship.accounts
             {
                 // Consult with your SQL Server administrator for an appropriate connection
                 // string to use to connect to your local SQL Server.
-                conn = new SqlConnection("Server=localhost;Database=training;Uid=root;Pwd=Mysql@123;");
+                conn = new MySqlConnection("Server=localhost;Database=training;Uid=root;Pwd=Mysql@123;");
+                conn.Dispose();
                 conn.Open();
 
                 // Create SqlCommand to select pwd field from users table given supplied userName.
-                cmd = new SqlCommand("Select pwd from users where uname=@userName", conn);
-                cmd.Parameters.Add("@userName", SqlDbType.VarChar, 25);
+                cmd = new MySqlCommand("Select pass from login where email=@userName",conn);
+                cmd.Parameters.Add("@userName", MySqlDbType.VarChar, 25);
                 cmd.Parameters["@userName"].Value = userName;
 
                 // Execute command and fetch pwd field into lookupPassword string.
@@ -95,7 +96,7 @@ namespace internship.accounts
                 string strRedirect;
                 strRedirect = Request["ReturnUrl"];
                 if (strRedirect == null)
-                    strRedirect = "default.aspx";
+                    strRedirect = "~/default.aspx";
                 Response.Redirect(strRedirect, true);
             }
             else

@@ -14,13 +14,7 @@ namespace internship
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cmdSignOut.ServerClick += new System.EventHandler(this.cmdSignOut_ServerClick);
 
-        }
-        private void cmdSignOut_ServerClick(object sender, System.EventArgs e)
-        {
-            FormsAuthentication.SignOut();
-            Response.Redirect("~/accounts/login.aspx", true);
         }
     }
 }
