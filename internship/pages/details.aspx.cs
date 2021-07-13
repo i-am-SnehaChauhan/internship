@@ -18,7 +18,7 @@ namespace internship.pages
             {
                 using (MySqlConnection sqlCon = new MySqlConnection(connectionString))
                 {
-                    serialnumber.Text = financialyear.SelectedValue + trainingdesc.Text + traineenumber.Text;
+                    serialnumber.Text = traineename.Text + trainingdesc.Text + traineenumber.Text;
                     sqlCon.Open();
                     MySqlCommand sqlCmd = new MySqlCommand("TraineeAdd", sqlCon);
                     sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;

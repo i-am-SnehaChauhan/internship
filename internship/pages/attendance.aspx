@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Inherits="internship.pages.attendance" CodeBehind="attendance.aspx.cs" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <section id="main-content">
         <section id="wrapper">
@@ -15,17 +16,18 @@
                                 <div class="row">
                                     <div class="col-md-3 col-md-offset-2">
                                         <div class="form-group">
-                                            <asp:Label Text="Training S.No. " runat="server" />
-                                            <asp:TextBox ID="serialnumber" runat="server" Enabled="true" CssClass="form-control input-sm" placeholder="Trainee S.No." />
+                                            <asp:GridView ID="GridView1" runat="server" CellPadding="3" GridLines="Horizontal" AutoGenerateColumns="False" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" Width="343px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                                                <AlternatingRowStyle BackColor="#F7F7F7" />
+                                                <Columns>
+                                                    <asp:BoundField DataField="traineesno" HeaderText="Serial Number" HeaderStyle-HorizontalAlign="Center" />
+                                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:LinkButton Text="present" ID="lnkSelect" CommandArgument='<%Eval("traineesno") %>' runat="server"/>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                                </Columns>
+                                            </asp:GridView>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-1 col-md-offset-2">
-                                        <asp:Button ID="btnsave" Text="Save" runat="server" CssClass="btn btn-primary" OnClick="save" />
-                                    </div>
-                                    <div class="col-md-2 col-md-offset-2">
-                                        <asp:Button ID="btnview" Text="View" runat="server" CssClass="btn btn-success" OnClick="view" />
                                     </div>
                                 </div>
                             </div>

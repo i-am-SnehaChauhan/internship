@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %></h2>
-    <table>
+    <table class ="output">
     <tr>
         <td>Email</td>
         <td>
@@ -11,6 +11,9 @@
             Display="Static" ErrorMessage="*" runat="server" 
             ID="vUserName" /></td>
     </tr>
+        <tr>
+
+        </tr>
     <tr>
         <td>Password:</td>
         <td><input id="txtUserPass" type="password" runat="server" class="form-control input-sm"></td>
@@ -19,6 +22,9 @@
         ID="vUserPass" />
         </td>
     </tr>
+        <tr>
+
+        </tr>
     <tr>
         <td>Remember me ?</td>
         <td>

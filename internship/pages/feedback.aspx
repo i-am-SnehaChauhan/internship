@@ -16,7 +16,9 @@
                                     <div class="col-md-3 col-md-offset-2">
                                         <div class="form-group">
                                             <asp:Label Text="Training S.No. " runat="server" />
-                                            <asp:TextBox ID="serialnumber" runat="server" Enabled="true" CssClass="form-control input-sm" placeholder="Trainee S.No." />
+                                            <asp:DropDownList ID="DropDownList1" runat="server"  CssClass="form-control input-sm" placeholder="Trainee S.No.">
+                                                <asp:ListItem Value="">Please Select</asp:ListItem> 
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                 </div>
