@@ -86,10 +86,13 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-1 col-md-offset-2">
+                                    <div class="col-md-1 col-md-offset-1">
                                         <asp:Button ID="btnsave" Text="Save" runat="server" CssClass="btn btn-primary" OnClick="save" />
                                     </div>
-                                    <div class="col-md-2 col-md-offset-2">
+                                    <div class="col-md-2 col-md-offset-1">
+                                        <asp:Button ID="btnupdate" Text="Update" runat="server" CssClass="btn btn-success" OnClick="update" />
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-1">
                                         <asp:Button ID="btnview" Text="View" runat="server" CssClass="btn btn-success" OnClick="view" />
                                     </div>
                                     <div class="col-md-2 col-md-offset-1">

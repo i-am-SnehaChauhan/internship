@@ -21,9 +21,15 @@ namespace internship.pages
             sqlDa.Fill(dtbl);
             GridView1.DataSource = dtbl;
             GridView1.DataBind();
+            con.Close();
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void submit(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void present_CheckedChanged(object sender, EventArgs e)
         {
             MySqlConnection con = new MySqlConnection("Server=localhost;Database=training;Uid=root;Pwd=Mysql@123;");
             con.Open();
@@ -31,7 +37,19 @@ namespace internship.pages
             sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
             sqlCmd.Parameters.AddWithValue("_trainesno", GridView1.Rows[0]);
             sqlCmd.Parameters.AddWithValue("_present", '1');
-
+            sqlCmd.ExecuteNonQuery();
+            con.Close();
+        }
+        protected void absent_CheckedChanged(object sender, EventArgs e)
+        {
+            MySqlConnection con = new MySqlConnection("Server=localhost;Database=training;Uid=root;Pwd=Mysql@123;");
+            con.Open();
+            MySqlCommand sqlCmd = new MySqlCommand("addattendance", con);
+            sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
+            sqlCmd.Parameters.AddWithValue("_trainesno", GridView1.Rows[0]);
+            sqlCmd.Parameters.AddWithValue("_present", '0');
+            sqlCmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

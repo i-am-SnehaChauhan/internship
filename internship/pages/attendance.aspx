@@ -16,17 +16,28 @@
                                 <div class="row">
                                     <div class="col-md-3 col-md-offset-2">
                                         <div class="form-group">
-                                            <asp:GridView ID="GridView1" runat="server" CellPadding="3" GridLines="Horizontal" AutoGenerateColumns="False" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" Width="343px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
-                                                <AlternatingRowStyle BackColor="#F7F7F7" />
+                                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Width="500px">
                                                 <Columns>
-                                                    <asp:BoundField DataField="traineesno" HeaderText="Serial Number" HeaderStyle-HorizontalAlign="Center" />
-                                                    <asp:TemplateField>
-                                        <ItemTemplate>
-                                            <asp:LinkButton Text="present" ID="lnkSelect" CommandArgument='<%Eval("traineesno") %>' runat="server"/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+                                                    <asp:BoundField DataField="traineesno" HeaderText="Serial Number" HeaderStyle-HorizontalAlign="Center" >
+                                                        <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                                                    </asp:BoundField>
+                                                    <asp:TemplateField HeaderText="Present" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle">
+                                                        <ItemTemplate>
+                                                            <asp:RadioButton ID="present" GroupName="attendance" OnCheckedChanged="present_CheckedChanged" runat="server" CssClass="radio" Width="30" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Absent" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle">
+                                                        <ItemTemplate>
+                                                            <asp:RadioButton ID="absent" GroupName="attendance" OnCheckedChanged="absent_CheckedChanged" runat="server" CssClass="radio" Width="30" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
                                                 </Columns>
                                             </asp:GridView>
+                                            <div class="row">
+                                                <div class="col-md-1 col-md-offset-2">
+                                                    <asp:Button ID="btnsubmit" Text="Submit" runat="server" CssClass="btn btn-primary" OnClick="submit" />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

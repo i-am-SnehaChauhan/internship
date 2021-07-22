@@ -44,6 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -110,7 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="accounts\login.aspx" />
-    <Content Include="accounts\Register.aspx" />
+    <Content Include="accounts\Registration.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -129,6 +135,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="pages\attendance.aspx" />
+    <Content Include="pages\NewTraining.aspx" />
     <Content Include="pages\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="pages\details.aspx" />
@@ -176,12 +183,12 @@
     <Compile Include="accounts\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="accounts\Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
+    <Compile Include="accounts\Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="accounts\Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
+    <Compile Include="accounts\Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -215,6 +222,13 @@
     </Compile>
     <Compile Include="pages\feedback.aspx.designer.cs">
       <DependentUpon>feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\NewTraining.aspx.cs">
+      <DependentUpon>NewTraining.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\NewTraining.aspx.designer.cs">
+      <DependentUpon>NewTraining.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\nominations.aspx.cs">
       <DependentUpon>nominations.aspx</DependentUpon>

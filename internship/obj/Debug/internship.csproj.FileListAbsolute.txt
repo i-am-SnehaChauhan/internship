@@ -172,3 +172,7 @@ D:\programming\C#\net\internship\internship\obj\Debug\internship.csproj.CoreComp
 D:\programming\C#\net\internship\internship\obj\Debug\internship.csproj.CopyComplete
 D:\programming\C#\net\internship\internship\obj\Debug\internship.dll
 D:\programming\C#\net\internship\internship\obj\Debug\internship.pdb
+D:\programming\C#\net\internship\internship\bin\EntityFramework.dll
+D:\programming\C#\net\internship\internship\bin\EntityFramework.SqlServer.dll
+D:\programming\C#\net\internship\internship\bin\EntityFramework.xml
+D:\programming\C#\net\internship\internship\bin\EntityFramework.SqlServer.xml
