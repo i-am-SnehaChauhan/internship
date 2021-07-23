@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Web;
@@ -11,23 +12,21 @@ namespace internship.pages
 {
     public partial class feedback : System.Web.UI.Page
     {
-        string connectionString = "Server=localhost;Database=training;Uid=root;Pwd=Mysql@123;";
+        string connectionString = ConfigurationManager.ConnectionStrings["myConnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
-            MySqlCommand com = new MySqlCommand("SELECT traineesno FROM train;", con);
+            MySqlCommand com = new MySqlCommand("SELECT traineename FROM train;", con);
             MySqlDataAdapter da = new MySqlDataAdapter(com);
             DataSet ds = new DataSet();
             da.Fill(ds);
-            DropDownList1.DataTextField = ds.Tables[0].Columns["traineesno"].ToString();
+            DropDownList1.DataTextField = ds.Tables[0].Columns["traineename"].ToString();
             DropDownList1.DataSource = ds.Tables[0];
             DropDownList1.DataBind();
         }
         protected void submit(object sender, EventArgs e)
         {
-            try
-            {
                 using (MySqlConnection sqlCon = new MySqlConnection(connectionString))
                 {
                     sqlCon.Open();
@@ -37,11 +36,6 @@ namespace internship.pages
                     sqlCmd.Parameters.AddWithValue("_traineesno", DropDownList1.SelectedValue);
                     sqlCmd.ExecuteNonQuery();
                 }
-            }
-            catch (Exception ex)
-            {
-                
-            }
         }
     }
 }

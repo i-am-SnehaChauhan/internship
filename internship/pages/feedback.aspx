@@ -15,10 +15,18 @@
                                 <div class="row">
                                     <div class="col-md-3 col-md-offset-2">
                                         <div class="form-group">
-                                            <asp:Label Text="Training S.No. " runat="server" />
-                                            <asp:DropDownList ID="DropDownList1" runat="server"  CssClass="form-control input-sm" placeholder="Trainee S.No.">
+                                            <asp:Label Text="Training Name" runat="server" />
+                                            <asp:DropDownList ID="DropDownList1" runat="server"  CssClass="form-control input-sm" placeholder="Training name">
                                                 <asp:ListItem Value="">Please Select</asp:ListItem> 
                                             </asp:DropDownList>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-2">
+                                        <div class="form-group">
+                                            <asp:Label Text="Enter EID" runat="server" />
+                                            <asp:TextBox ID="eid" runat="server" CssClass="form-control input-sm" placeholder="EID"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>

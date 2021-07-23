@@ -14,6 +14,7 @@ namespace internship.accounts
 {
     public partial class login : System.Web.UI.Page
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["myConnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             this.cmdLogin.ServerClick += new System.EventHandler(this.cmdLogin_ServerClick);
@@ -36,7 +37,7 @@ namespace internship.accounts
 
             try
             {
-                conn = new MySqlConnection("Server=localhost;Database=training;Uid=root;Pwd=Mysql@123;");
+                conn = new MySqlConnection(connectionString);
                 conn.Dispose();
                 conn.Open();
                 cmd = new MySqlCommand("Select pass from login where email=@userName", conn);

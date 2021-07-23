@@ -12,44 +12,52 @@ namespace internship.pages
 {
     public partial class attendance : System.Web.UI.Page
     {
+        int a;
+        string connectionString = ConfigurationManager.ConnectionStrings["myConnection"].ConnectionString;
+        string select;
         protected void Page_Load(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection("Server=localhost;Database=training;Uid=root;Pwd=Mysql@123;");
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
-            MySqlDataAdapter sqlDa = new MySqlDataAdapter("select traineesno from train", con);
-            DataTable dtbl = new DataTable();
-            sqlDa.Fill(dtbl);
-            GridView1.DataSource = dtbl;
-            GridView1.DataBind();
-            con.Close();
+            MySqlCommand com = new MySqlCommand("select traineename from train", con);
+            MySqlDataAdapter da = new MySqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            DropDownList1.DataTextField = ds.Tables[0].Columns["traineename"].ToString();
+            DropDownList1.DataSource = ds.Tables[0];
+            DropDownList1.DataBind();
+        }
+        protected void Check(object sender, EventArgs e)
+        {
+            select = DropDownList1.SelectedValue.Trim();
+            using (MySqlConnection sqlCon = new MySqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("select EID,traineesno from " + select, sqlCon);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+                GridView1.DataSource = dtbl;
+                GridView1.DataBind();
+            }
         }
 
-        protected void submit(object sender, EventArgs e)
+        protected void Submit(object sender, EventArgs e)
         {
-            
+            using (MySqlConnection sqlCon = new MySqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                MySqlCommand com = new MySqlCommand("UPDATE " + select + " SET `attendance` = "+ a +"WHERE EID ;", sqlCon);
+            }
         }
 
         protected void present_CheckedChanged(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection("Server=localhost;Database=training;Uid=root;Pwd=Mysql@123;");
-            con.Open();
-            MySqlCommand sqlCmd = new MySqlCommand("addattendance", con);
-            sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
-            sqlCmd.Parameters.AddWithValue("_trainesno", GridView1.Rows[0]);
-            sqlCmd.Parameters.AddWithValue("_present", '1');
-            sqlCmd.ExecuteNonQuery();
-            con.Close();
+            a = 1;
         }
+
         protected void absent_CheckedChanged(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection("Server=localhost;Database=training;Uid=root;Pwd=Mysql@123;");
-            con.Open();
-            MySqlCommand sqlCmd = new MySqlCommand("addattendance", con);
-            sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
-            sqlCmd.Parameters.AddWithValue("_trainesno", GridView1.Rows[0]);
-            sqlCmd.Parameters.AddWithValue("_present", '0');
-            sqlCmd.ExecuteNonQuery();
-            con.Close();
+            a = 1;
         }
     }
 }

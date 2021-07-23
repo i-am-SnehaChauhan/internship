@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,7 +11,7 @@ namespace internship.accounts
 {
     public partial class Register : System.Web.UI.Page
     {
-        string connectionString = @"Server=localhost;Database=training;Uid=root;Pwd=Mysql@123;";
+        string connectionString = ConfigurationManager.ConnectionStrings["myConnection"].ConnectionString;
         string level = "trainee";
         protected void Page_Load(object sender, EventArgs e)
         {

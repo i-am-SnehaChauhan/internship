@@ -135,7 +135,6 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="pages\attendance.aspx" />
-    <Content Include="pages\NewTraining.aspx" />
     <Content Include="pages\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="pages\details.aspx" />
@@ -222,13 +221,6 @@
     </Compile>
     <Compile Include="pages\feedback.aspx.designer.cs">
       <DependentUpon>feedback.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\NewTraining.aspx.cs">
-      <DependentUpon>NewTraining.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\NewTraining.aspx.designer.cs">
-      <DependentUpon>NewTraining.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\nominations.aspx.cs">
       <DependentUpon>nominations.aspx</DependentUpon>

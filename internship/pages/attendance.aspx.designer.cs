@@ -15,6 +15,24 @@ namespace internship.pages
     {
 
         /// <summary>
+        /// DropDownList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+
+        /// <summary>
+        /// btnview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnview;
+
+        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>
@@ -24,12 +42,12 @@ namespace internship.pages
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// btnsubmit control.
+        /// submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnsubmit;
+        protected global::System.Web.UI.WebControls.Button submit;
     }
 }

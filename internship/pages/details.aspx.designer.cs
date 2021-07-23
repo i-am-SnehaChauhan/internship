@@ -78,22 +78,13 @@ namespace internship.pages
         protected global::System.Web.UI.WebControls.TextBox traineeemail;
 
         /// <summary>
-        /// Label4 control.
+        /// trainingdesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-
-        /// <summary>
-        /// traineeresume control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox traineeresume;
+        protected global::System.Web.UI.WebControls.TextBox trainingdesc;
 
         /// <summary>
         /// financialyear control.
@@ -105,13 +96,13 @@ namespace internship.pages
         protected global::System.Web.UI.WebControls.DropDownList financialyear;
 
         /// <summary>
-        /// trainingdesc control.
+        /// serialnumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox trainingdesc;
+        protected global::System.Web.UI.WebControls.TextBox serialnumber;
 
         /// <summary>
         /// datefrom control.
@@ -132,15 +123,6 @@ namespace internship.pages
         protected global::System.Web.UI.WebControls.TextBox datetill;
 
         /// <summary>
-        /// serialnumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox serialnumber;
-
-        /// <summary>
         /// btnsave control.
         /// </summary>
         /// <remarks>
@@ -148,15 +130,6 @@ namespace internship.pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnsave;
-
-        /// <summary>
-        /// btnupdate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnupdate;
 
         /// <summary>
         /// btnview control.

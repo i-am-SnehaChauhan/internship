@@ -26,19 +26,9 @@
             </div>
         </div>
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Confirm password</asp:Label>
-            <div class="col-md-10">
-                <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
-                <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
-            </div>
-        </div>
-        <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="name" CssClass="col-md-2 control-label">Name</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="name" CssClass="form-control" />/>
+                <asp:TextBox runat="server" ID="name" CssClass="form-control" />
             </div>
         </div>
         <div class="form-group">
